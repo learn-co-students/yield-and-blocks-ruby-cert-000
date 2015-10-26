@@ -232,7 +232,7 @@ Here, we tell our method to return the original array simply by having that arra
 
 You've already worked with enumerator methods like `#each`, `#collect` and others. These methods are called on collections, like arrays. They take blocks as their arguments and *yield* each element of the collection to the block, allowing the code in the block to be applied to each element of the collection. 
 
-In the code-along above, we built our own implementation of the `#each` method. We used `while` to loop, or iterate, over each element of the array and passed, or yielded, each of those elements to an accompanying block. 
+In the code-along above, we built our own implementation of the `#each` method. We used `while` to loop, or iterate, over each element of the array and passed, or yielded, each of those elements to an accompanying block. That block used parameters, `|i|`, to set a variable, `i`, equal to whatever value is yielded into the block at each successive step of the iteration. That block also contained code to execute with each yield element in turn. 
 
 You can read more about the `yield` keyword and blocks in Ruby from the resources below.
 
