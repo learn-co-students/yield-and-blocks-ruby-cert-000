@@ -14,7 +14,7 @@ Let's take a look at the following example:
 
 ```ruby
 ["Tim", "Tom", "Jim"].each do |name|
-	puts "Hi, #{name}"
+  puts "Hi, #{name}"
 end
 ```
 
@@ -24,9 +24,9 @@ Let's take a look at another example. In the below snippet, we're writing a meth
 
 ```ruby
 ["Tim", "Tom", "Jim"].each do |name|
-	if name.start_with?("T")
-		puts "Hi, #{name}"
-	end
+  if name.start_with?("T")
+	  puts "Hi, #{name}"
+  end
 end
 ```
 
@@ -60,7 +60,7 @@ or:
 
 ```ruby
 yielding do 
-	puts "the method has yielded to the block!"
+  puts "the method has yielded to the block!"
 end
 ```
 
@@ -82,8 +82,7 @@ For example:
 ```ruby
 def yielding_with_arguments(num)
   puts "the program is executing the code inside the method"
-  i = num
-  yield(i)
+  yield(num)
   puts "now we are back in the method"
 end
 ```
@@ -129,7 +128,7 @@ Let's revisit our earlier example of a call to the `#each` method that only `put
 end
 ```
 
-In this example, we'll be building our own method, `#hello_t`. 
+In this example, we'll be building our own method, `#hello`. 
 
 Open up `lib/hello.rb`. We'll be coding the body of the `#hello_t` method. 
 
@@ -140,7 +139,7 @@ Our method needs to operate on an array so let's define it to take in an argumen
 ```ruby
 # lib/hello.rb
 
-def hello_t(array)
+def hello(array)
 	# code here
 end
 ```
@@ -152,7 +151,7 @@ Great, let's move on.
 We know that we want to yield each element of the array successively do a block that we will call this method with. Let's use a `while` loop to create our iteration:
 
 ```ruby
-def hello_t(array)
+def hello(array)
   i = 0
   while i < array.length
     i = i + 1
@@ -170,10 +169,10 @@ Now, we need to tell our method to actually `yield` each member of the array, as
 
 The first time through our `while` loop, `i` is set equal to zero. The second time through the loop, `i` is set equal to `1`, and so on. This will go until until `i` is equal to the last index number of our array. 
 
-So, inside each step of the `while` loop, `i` equals a give index number of our array. We can use this information to yield each successive value stored in our array, to our block. 
+So, inside each step of the `while` loop, `i` equals a given index number of our array. We can use this information to yield each successive value stored in our array, to our block. 
 
 ```ruby
-def hello_t(array)
+def hello(array)
   i = 0
   while i < array.length
     i = i + 1
@@ -193,7 +192,7 @@ Let's call our method with an argument of the following array:
 ```
 
 ```ruby
-hello_t(["Tim", "Tom", "Jim"]) do |name|
+hello(["Tim", "Tom", "Jim"]) do |name|
 	if name.start_with?("T")
 		puts "Hi, #{name}"
 	end
@@ -216,7 +215,7 @@ Go ahead and run the test suite by typing `learn` into your terminal in the dire
 How can we fix this? We can tell our `#hello_t` method to return the original array:
 
 ```ruby
-def hello_t(array)
+def hello(array)
   i = 0
   while i < array.length
     yield(array[i])
@@ -227,6 +226,32 @@ end
 ```
 
 Here, we tell our method to return the original array simply by having that array be the last line of the method. Whatever if evaluated last in a method will be it's return value. If you run the test again, you should be passing. 
+
+
+### Advanced: Defining a method to optionally take a block
+
+In the examples above, our methods will break if they are called without an accompanying block. We like our code to be flexible and accommodating. In other words, we don't want our code to break so easily. 
+
+Let's refactor our `#hello` method so that it can be called either with our without a block:
+
+```ruby
+def hello(array)
+  if block_given?
+    i = 0
+    while i < array.length
+      yield(array[i])
+      i = i + 1
+    end
+    array
+  else
+    puts "Hey! No block was given!"
+  end
+end
+```
+
+**The `block_given?` method** returns true if the method that contains `block_given?` is called with a block and false if it is not. 
+
+So, our `#hello` method will `yield` each element of the array to the block if a block is present, otherwise it will `puts` out a helpful phrase. 
 
 ## Enumerators Under the Hood
 
