@@ -206,7 +206,7 @@ Hi, Tim
 Hi, Tom
 ```
 
-We call our method with the argument of our array and accompany that method cal with a block that contains the `name` parameter and the desired code to `puts` out a greeting if the person's name begins with the letter `"T"`. Good job!
+We call our method with the argument of our array and accompany that method call with a block that contains the `name` parameter and the desired code to `puts` out a greeting if the person's name begins with the letter `"T"`. Good job!
 
 #### Step 5: Passing Our Test
 
