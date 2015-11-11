@@ -232,7 +232,7 @@ Here, we tell our method to return the original array simply by having that arra
 
 In the examples above, our methods will break if they are called without an accompanying block. We like our code to be flexible and accommodating. In other words, we don't want our code to break so easily. 
 
-Let's refactor our `#hello` method so that it can be called either with our without a block:
+Let's refactor our `#hello` method so that it can be called either with or without a block:
 
 ```ruby
 def hello(array)
