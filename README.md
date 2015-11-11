@@ -128,7 +128,7 @@ Let's revisit our earlier example of a call to the `#each` method that only `put
 end
 ```
 
-In this example, we'll be building our own method, `#hello`. 
+In this example, we'll be building our own method, `#hello_t`. 
 
 Open up `lib/hello.rb`. We'll be coding the body of the `#hello_t` method. 
 
@@ -139,7 +139,7 @@ Our method needs to operate on an array so let's define it to take in an argumen
 ```ruby
 # lib/hello.rb
 
-def hello(array)
+def hello_t(array)
 	# code here
 end
 ```
@@ -151,7 +151,7 @@ Great, let's move on.
 We know that we want to yield each element of the array successively do a block that we will call this method with. Let's use a `while` loop to create our iteration:
 
 ```ruby
-def hello(array)
+def hello_t(array)
   i = 0
   while i < array.length
     i = i + 1
@@ -172,7 +172,7 @@ The first time through our `while` loop, `i` is set equal to zero. The second ti
 So, inside each step of the `while` loop, `i` equals a given index number of our array. We can use this information to yield each successive value stored in our array, to our block. 
 
 ```ruby
-def hello(array)
+def hello_t(array)
   i = 0
   while i < array.length
     i = i + 1
@@ -192,7 +192,7 @@ Let's call our method with an argument of the following array:
 ```
 
 ```ruby
-hello(["Tim", "Tom", "Jim"]) do |name|
+hello_t(["Tim", "Tom", "Jim"]) do |name|
 	if name.start_with?("T")
 		puts "Hi, #{name}"
 	end
@@ -215,7 +215,7 @@ Go ahead and run the test suite by typing `learn` into your terminal in the dire
 How can we fix this? We can tell our `#hello_t` method to return the original array:
 
 ```ruby
-def hello(array)
+def hello_t(array)
   i = 0
   while i < array.length
     yield(array[i])
@@ -235,7 +235,7 @@ In the examples above, our methods will break if they are called without an acco
 Let's refactor our `#hello` method so that it can be called either with or without a block:
 
 ```ruby
-def hello(array)
+def hello_t(array)
   if block_given?
     i = 0
     while i < array.length
@@ -251,7 +251,7 @@ end
 
 **The `block_given?` method** returns true if the method that contains `block_given?` is called with a block and false if it is not. 
 
-So, our `#hello` method will `yield` each element of the array to the block if a block is present, otherwise it will `puts` out a helpful phrase. 
+So, our `#hello_t` method will `yield` each element of the array to the block if a block is present, otherwise it will `puts` out a helpful phrase. 
 
 ## Enumerators Under the Hood
 
