@@ -32,7 +32,7 @@ end
 
 Once again, our `#each` method is yielding each element of the array to the accompanying block. The code in the block is executed, using each successive element from the array, as the iteration proceeds. 
 
-But how do `#each`, and the other iterators like `#collect`, actually pass, or yield, each successive element to it's accompanying block? Under the hood, these methods rely on the `yield` keyword. 
+But how do `#each`, and the other iterators like `#collect`, actually pass, or yield, each successive element to its accompanying block? Under the hood, these methods rely on the `yield` keyword. 
 
 Let's take a closer look at `yield` and try to build our own custom methods that utilize it. 
 
