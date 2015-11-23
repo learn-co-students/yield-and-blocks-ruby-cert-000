@@ -148,7 +148,7 @@ Great, let's move on.
 
 #### Step 2: Enacting an iteration
 
-We know that we want to yield each element of the array successively do a block that we will call this method with. Let's use a `while` loop to create our iteration:
+We know that we want to yield each element of the array successively to a block that we will call this method with. Let's use a `while` loop to create our iteration:
 
 ```ruby
 def hello_t(array)
