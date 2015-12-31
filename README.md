@@ -122,7 +122,7 @@ Let's revisit our earlier example of a call to the `#each` method that only `put
 
 ```ruby
 ["Tim", "Tom", "Jim"].each do |name|
-	if name.starts_with?("T")
+	if name.start_with?("T")
 		puts "Hi, #{name}"
 	end
 end
