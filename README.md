@@ -161,7 +161,7 @@ end
 
 ##### `while` Loop Review
 
-In the code above, we set a counter variable, `i`, equal to `0`. We start our `while` loop and tell it to execute the code in between the `while` and `end` keywords as long as `i` is less than or equal to the length of the array. Inside our `while` loop, we increment the value of our `i` variable. 
+In the code above, we set a counter variable, `i`, equal to `0`. We start our `while` loop and tell it to execute the code in between the `while` and `end` keywords as long as `i` is less than the length of the array. Inside our `while` loop, we increment the value of our `i` variable. 
 
 Now, we need to tell our method to actually `yield` each member of the array, as we loop over it, to the block we will call our `#hello_t` method with. 
 
