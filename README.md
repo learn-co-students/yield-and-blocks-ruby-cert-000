@@ -32,7 +32,7 @@ end
 
 Once again, our `#each` method is yielding each element of the array to the accompanying block. The code in the block is executed, using each successive element from the array, as the iteration proceeds. 
 
-But how do `#each`, and the other iterators like `#collect`, actually pass, or yield, each successive element to it's accompanying block? Under the hood, these methods rely on the `yield` keyword. 
+But how do `#each`, and the other iterators like `#collect`, actually pass, or yield, each successive element to its accompanying block? Under the hood, these methods rely on the `yield` keyword. 
 
 Let's take a closer look at `yield` and try to build our own custom methods that utilize it. 
 
@@ -122,7 +122,7 @@ Let's revisit our earlier example of a call to the `#each` method that only `put
 
 ```ruby
 ["Tim", "Tom", "Jim"].each do |name|
-	if name.starts_with?("T")
+	if name.start_with?("T")
 		puts "Hi, #{name}"
 	end
 end
@@ -148,7 +148,7 @@ Great, let's move on.
 
 #### Step 2: Enacting an iteration
 
-We know that we want to yield each element of the array successively do a block that we will call this method with. Let's use a `while` loop to create our iteration:
+We know that we want to yield each element of the array successively to a block that we will call this method with. Let's use a `while` loop to create our iteration:
 
 ```ruby
 def hello_t(array)
@@ -161,7 +161,7 @@ end
 
 ##### `while` Loop Review
 
-In the code above, we set a counter variable, `i`, equal to `0`. We start our `while` loop and tell it to execute the code in between the `while` and `end` keywords as long as `i` is less than or equal to the length of the array. Inside our `while` loop, we increment the value of our `i` variable. 
+In the code above, we set a counter variable, `i`, equal to `0`. We start our `while` loop and tell it to execute the code in between the `while` and `end` keywords as long as `i` is less than the length of the array. Inside our `while` loop, we increment the value of our `i` variable. 
 
 Now, we need to tell our method to actually `yield` each member of the array, as we loop over it, to the block we will call our `#hello_t` method with. 
 
@@ -225,7 +225,7 @@ def hello_t(array)
 end
 ```
 
-Here, we tell our method to return the original array simply by having that array be the last line of the method. Whatever if evaluated last in a method will be it's return value. If you run the test again, you should be passing. 
+Here, we tell our method to return the original array simply by having that array be the last line of the method. Whatever is evaluated last in a method will be it's return value. If you run the test again, you should be passing. 
 
 
 ### Advanced: Defining a method to optionally take a block
@@ -264,4 +264,6 @@ You can read more about the `yield` keyword and blocks in Ruby from the resource
 * [All About Ruby](http://allaboutruby.wordpress.com/) - [Ruby Blocks](http://allaboutruby.wordpress.com/2006/01/20/ruby-blocks-101/)
 * [About.com](http://ruby.about.com/) - [Block Parameters and Yielding](http://ruby.about.com/od/beginningruby/a/Block-Parameters-And-Yielding.htm)
 * [Coda Hale's Blog](http://blog.codahale.com/2005/11/24/a-ruby-howto-writing-a-method-that-uses-code-blocks/) - [Writing a Method that Uses Code Blocks](http://blog.codahale.com/2005/11/24/a-ruby-howto-writing-a-method-that-uses-code-blocks/)
-* [Reactive's Tips](http://www.reactive.io/tips/) - [Understanding Ruby Blocks, Procs, and Lambdas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
+* [Reactive's Tips](http://www.reactive.io/tips/) - [Understanding Ruby Blocks, Procs, and Lambdas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas)
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/yield-and-blocks' title='Yield and Blocks'>Yield and Blocks</a> on Learn.co and start learning to code for free.</p>
