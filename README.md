@@ -267,5 +267,3 @@ You can read more about the `yield` keyword and blocks in Ruby from the resource
 * [Reactive's Tips](http://www.reactive.io/tips/) - [Understanding Ruby Blocks, Procs, and Lambdas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/yield-and-blocks' title='Yield and Blocks'>Yield and Blocks</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/yield-and-blocks'>Yield and Blocks</a> on Learn.co and start learning to code for free.</p>
