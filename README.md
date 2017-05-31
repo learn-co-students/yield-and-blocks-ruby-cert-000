@@ -154,6 +154,7 @@ We know that we want to yield each element of the array successively to a block 
 ```ruby
 def hello_t(array)
   i = 0
+
   while i < array.length
     i = i + 1
   end
@@ -175,6 +176,7 @@ So, during each step of the `while` loop, `i` equals a given index number of our
 ```ruby
 def hello_t(array)
   i = 0
+
   while i < array.length
     yield array[i]
     i = i + 1
@@ -218,10 +220,12 @@ How can we fix this? We can tell our `#hello_t` method to return the original ar
 ```ruby
 def hello_t(array)
   i = 0
+
   while i < array.length
     yield(array[i])
     i = i + 1
   end
+
   array
 end
 ```
