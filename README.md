@@ -202,7 +202,7 @@ hello_t(["Tim", "Tom", "Jim"]) do |name|
 end
 ```
 
-Copy and paste the above method call into your `lib/hello.rb` file and run the file with `ruby lib/hello.rb` in your terminal. You should see the following:
+Copy and paste the above method call into your `lib/hello.rb` file (paste it below the line that reads `# call your method here!`). Then, run the file with the `ruby lib/hello.rb` command in your terminal. You should see the following:
 
 ```bash
 Hi, Tim
@@ -235,7 +235,7 @@ Here, we tell our method to return the original array simply by having that arra
 
 ### Advanced: Defining a method to optionally take a block
 
-In the examples above, our methods will break if they are called without an accompanying block. We like our code to be flexible and accommodating. In other words, we don't want our code to break so easily.
+In the examples above, our methods will break if they are called without an accompanying block. Go ahead and try it — you'll see a `no block given (yield) (LocalJumpError)`. This is bad because we like our code to be flexible and accommodating. In other words, we don't want our code to break so easily and in such an ugly, uncontrolled manner.
 
 Let's refactor our `#hello` method so that it can be called either with or without a block:
 
