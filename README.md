@@ -87,7 +87,7 @@ def yielding_with_arguments(num)
 end
 ```
 
-To call this method, we invoke our method and give it an argument *and* we accompany that method call with a block that contains a placeholder for the yielded value, plus whatever code we want to enact with that yielded value:
+We can invoke `#yielding_with_arguments` by providing both an argument *and* a block containing a placeholder, `|i|` in the following example, which will accept the argument passed to `yield`:
 
 ```ruby
 yielding_with_arguments(2) {|i| puts i * 2}
@@ -105,7 +105,7 @@ and a block:
 { |i| puts i * 2 }
 ```
 
-The `|i|` (placeholder variable in between pipes) is our placeholder for the yielded value. The `i * 2` is the code we actually want to enact with our yielded value.
+The `|i|` (placeholder variable in between pipes) is our placeholder for the `yield`ed value. The `puts i * 2` is the code we actually want to enact with our `yield`ed value.
 
 So, the above method call will output:
 
@@ -115,7 +115,7 @@ the program is executing the code inside the method
 now we are back in the method
 ```
 
-The syntax inside the block might look familiar — it is how we identify index items in a block when we call `#each` on an array and pass a block to that method call.
+The syntax inside the block might look familiar — it is how we pass items from a collection into a block, one by one, when we use an iterator like `#each`.
 
 ## Code-Along: Building our own method with `yield`
 
