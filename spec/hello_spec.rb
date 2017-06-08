@@ -21,4 +21,10 @@ describe "#hello_t" do
       .to output("Ali\nJasmine\nPersephone\n")
       .to_stdout
   end
+
+  it "fails gracefully when a block is not passed in" do
+    expect{ hello_t(names) }
+      .to output("Hey! No block was given!\n")
+      .to_stdout
+  end
 end
