@@ -213,7 +213,29 @@ We're calling our method with the array of names as an argument and accompanying
 
 #### Step 5: Passing our test
 
-Go ahead and run the test suite by typing `learn` into your terminal in this lesson's directory. You'll see that our test expects us to return the original array, but our method is currently returning `nil`.
+Go ahead and run the test suite by typing `learn` into your terminal in this lesson's directory. You'll see that our test expects us to return the original array, but our method is currently returning `nil`:
+
+```
+Failures:
+
+  1) #hello_t returns the original array
+     Failure/Error:
+       expect( hello_t(names){ |name| puts name } )
+         .to eq(names)
+
+       expected: ["Tim", "Tom", "Jim"]
+            got: nil
+
+       (compared using ==)
+     # ./spec/hello_spec.rb:13:in `block (2 levels) in <top (required)>'
+
+Finished in 0.01509 seconds (files took 0.1233 seconds to load)
+2 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/hello_spec.rb:12 # #hello_t returns the original array
+```
 
 How can we fix this? We can tell our `#hello_t` method to return the original array:
 
