@@ -1,17 +1,30 @@
 require "spec_helper"
 
-describe "#hello_t" do 
+describe "#hello_t" do
   let (:names) { ["Tim", "Tom", "Jim"] }
-  it "only passes names that start with 'T' to the block" do 
-    expect{hello_t(names){|name| puts "Hi, #{name}" if name.start_with?("T") }}.to output("Hi, Tim\nHi, Tom\n").to_stdout
+
+  it "calls the block once for each element in the passed-in array" do
+    expect{ hello_t(names){ |name| puts name } }
+      .to output("Tim\nTom\nJim\n")
+      .to_stdout
   end
 
-  it "returns an array with only names that start with 'T'" do
-    expect(hello_t(names) {|name| puts "Hi, #{name}" if name.start_with?('T') }).to eq(names)
+  it "returns the original array" do
+    expect( hello_t(names){ |name| puts name } )
+      .to eq(names)
   end
 
-  it "is case insensitive" do
-    other_names = ["tim", "tom", "jim"]
-    expect{hello_t(other_names){|name| puts "Hi, #{name}" if name.start_with?("t") }}.to output("Hi, tim\nHi, tom\n").to_stdout
+  it "is not hard-coded" do
+    other_names = ["Ali", "Jasmine", "Persephone"]
+
+    expect{ hello_t(other_names){ |name| puts name.upcase } }
+      .to output("ALI\nJASMINE\nPERSEPHONE\n")
+      .to_stdout
+  end
+
+  it "fails gracefully when a block is not passed in" do
+    expect{ hello_t(names) }
+      .to output("Hey! No block was given!\n")
+      .to_stdout
   end
 end
