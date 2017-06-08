@@ -87,7 +87,7 @@ def yielding_with_arguments(num)
 end
 ```
 
-We can invoke `#yielding_with_arguments` by providing both an argument *and* a block containing a placeholder, `|i|` in the following example, which will accept the argument passed to `yield`:
+We can call `#yielding_with_arguments` by providing both an argument *and* a block containing a placeholder, `|i|` in the following example, which will accept the argument passed to `yield`:
 
 ```ruby
 yielding_with_arguments(2) {|i| puts i * 2}
@@ -184,11 +184,11 @@ def hello_t(array)
 end
 ```
 
-Here, we use the bracket (`[]`) method to grab the value of each successive index element as we proceed through our `while` loop, `yield`ing each to a block. Now we're ready to call our method:
+Here, we use the bracket (`[]`) method to grab the value of each successive index element as we proceed through our `while` loop, `yield`ing each to a block. Now we're ready to call our method.
 
 #### Step 4: Calling our method
 
-Let's invoke our method, passing in the following array as an argument:
+Let's call our method, passing in the following array as an argument:
 
 ```ruby
 ["Tim", "Tom", "Jim"]
@@ -209,7 +209,7 @@ Hi, Tim
 Hi, Tom
 ```
 
-We're invoking our method with the array of names as an argument and accompanying that method call with a block that accepts a `|name|` parameter. If the passed-in name begins with the letter `"T"`, the block will `puts` out a greeting. Good job!
+We're calling our method with the array of names as an argument and accompanying that method call with a block that accepts a `|name|` parameter. If the passed-in name begins with the letter `"T"`, the block will `puts` out a greeting. Good job!
 
 #### Step 5: Passing our test
 
