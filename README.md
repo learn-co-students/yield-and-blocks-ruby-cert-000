@@ -209,7 +209,7 @@ Hi, Tim
 Hi, Tom
 ```
 
-We're calling our method with the array of names as an argument and accompanying that method call with a block that accepts a `|name|` parameter. If the passed-in name begins with the letter `"T"`, the block will `puts` out a greeting. Good job!
+We're calling our method with the array of names as an argument and accompanying that method call with a block that accepts a `|name|` parameter. If the passed-in name begins with the letter `"T"`, the block will `puts` out a greeting. Good job! Before moving on to Step 5, be sure to remove the above method call from lib/hello.rb.
 
 #### Step 5: Passing our test
 
