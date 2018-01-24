@@ -259,7 +259,7 @@ Here, we tell our method to return the original array simply by having that arra
 
 In the examples above, our methods will break if they are called without an accompanying block. Go ahead and try it — you'll see a `no block given (yield) (LocalJumpError)`. This is bad because we like our code to be flexible and accommodating. In other words, we don't want our code to break so easily and in such an ugly, uncontrolled manner.
 
-Let's refactor our `#hello` method so that it can be called either with or without a block:
+Let's refactor our `#hello_t` method so that it can be called either with or without a block:
 
 ```ruby
 def hello_t(array)
