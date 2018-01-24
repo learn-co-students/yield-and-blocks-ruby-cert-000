@@ -252,7 +252,7 @@ def hello_t(array)
 end
 ```
 
-Here, we tell our method to return the original array simply by having that array be the last line of the method. Whatever is evaluated last in a method will be the return value for the whole method. If you run the test again, you should be passing.
+Here, we tell our method to return the original array simply by having that array be the last line of the method. Whatever is evaluated last in a method will be the return value for the whole method. If you run the test again, you should be passing (although the "test suite," the full collection of tests, is not quite done!).
 
 
 ### Advanced: Defining a method to optionally take a block
