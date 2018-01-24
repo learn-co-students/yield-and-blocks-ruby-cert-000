@@ -286,7 +286,7 @@ Our `#hello_t` method will `yield` each element of the array to the block if a b
 
 You've already worked with enumerator methods like `#each` and `#collect`. These methods are called on collections, such as arrays. They take blocks as their arguments and *yield* each element of the collection to the block, allowing the code in the block to be applied to each element of the collection.
 
-In the code-along above, we built our own implementation of the `#each` method. We used `while` to iterate through each element of the array and passed, or `yield`ed, each successive element to an accompanying block. That block used a parameter placeholder, `|i|`, to set a variable, `i`, equal to whatever value is `yield`ed into the block at each step of the iteration. That block also contained code to execute with each `yield`ed element in turn.
+In the code-along above, we built our own implementation of the `#each` method. We used `while` to iterate through each element of the array and passed, or `yield`ed, each successive element to an accompanying block. That block used a parameter placeholder, `|name|`, to set a variable, `name`, equal to whatever value is `yield`ed into the block at each step of the iteration. That block also contained code to execute with each `yield`ed element in turn.
 
 You can read more about the `yield` keyword and blocks in Ruby from the resources below:
 
