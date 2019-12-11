@@ -38,7 +38,7 @@ Let's take a closer look at `yield` and try to build our own custom methods that
 
 ## The `yield` keyword
 
-The `yield` keyword, when used inside the body of a method, will allow you to call that method with a block of code and pass the torch, or *yield*, to that block. Think of the `yield` keyword as saying: "Stop executing the code in this method, and instead execute the code in this block. Then, return to the code in the method."
+The `yield` keyword, when used inside the body of a method, will allow you to call that method with a block of code and pass the torch, or _yield_, to that block. Think of the `yield` keyword as saying: "Stop executing the code in this method, and instead execute the code in this block. Then, return to the code in the method."
 
 Let's look at the following example:
 
@@ -72,7 +72,6 @@ the method has yielded to the block!
 now we are back in the method
 ```
 
-
 #### `yield`ing with parameters
 
 The `yield` keyword can take parameters. In other words, if you use `yield` and give it an argument, it will pass that argument to the block and that data will become available to the code in the block.
@@ -87,7 +86,7 @@ def yielding_with_arguments(num)
 end
 ```
 
-We can call `#yielding_with_arguments` by providing both an argument *and* a block containing a placeholder, `|i|` in the following example, which will accept the argument passed to `yield`:
+We can call `#yielding_with_arguments` by providing both an argument _and_ a block containing a placeholder, `|i|` in the following example, which will accept the argument passed to `yield`:
 
 ```ruby
 yielding_with_arguments(2) {|i| puts i * 2}
@@ -163,7 +162,7 @@ end
 
 ##### `while` loop review
 
-In the code above, we set a counter variable, `i`, equal to `0`. We start our `while` loop and tell it to execute the code in between the `while` and `end` keywords as long as `i` is *less* than the length of the array. Inside our `while` loop, we increment the value of `i`.
+In the code above, we set a counter variable, `i`, equal to `0`. We start our `while` loop and tell it to execute the code in between the `while` and `end` keywords as long as `i` is _less_ than the length of the array. Inside our `while` loop, we increment the value of `i`.
 
 Now, as we iterate through the array, we need to `yield` each member of the array to the block that we'll pass to our `#hello_t` method.
 
@@ -254,7 +253,6 @@ end
 
 Here, we tell our method to return the original array simply by having that array be the last line of the method. Whatever is evaluated last in a method will be the return value for the whole method. If you run the test again, you should be passing (although the "test suite," the full collection of tests, is not quite done!).
 
-
 ### Advanced: Defining a method to optionally take a block
 
 In the examples above, our methods will break if they are called without an accompanying block. Go ahead and try it — you'll see a `no block given (yield) (LocalJumpError)`. This is bad because we like our code to be flexible and accommodating. In other words, we don't want our code to break so easily and in such an ugly, uncontrolled manner.
@@ -284,14 +282,14 @@ Our `#hello_t` method will `yield` each element of the array to the block if a b
 
 ## Enumerators under the hood
 
-You've already worked with enumerator methods like `#each` and `#collect`. These methods are called on collections, such as arrays. They take blocks as their arguments and *yield* each element of the collection to the block, allowing the code in the block to be applied to each element of the collection.
+You've already worked with enumerator methods like `#each` and `#collect`. These methods are called on collections, such as arrays. They take blocks as their arguments and _yield_ each element of the collection to the block, allowing the code in the block to be applied to each element of the collection.
 
 In the code-along above, we built our own implementation of the `#each` method. We used `while` to iterate through each element of the array and passed, or `yield`ed, each successive element to an accompanying block. That block used a parameter placeholder, `|name|`, to set a variable, `name`, equal to whatever value is `yield`ed into the block at each step of the iteration. That block also contained code to execute with each `yield`ed element in turn.
 
 You can read more about the `yield` keyword and blocks in Ruby from the resources below:
 
-* [All About Ruby](http://allaboutruby.wordpress.com/) - [Ruby Blocks](http://allaboutruby.wordpress.com/2006/01/20/ruby-blocks-101/)
-* [Reactive's Tips](http://www.reactive.io/tips/) - [Understanding Ruby Blocks, Procs, and Lambdas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas)
-* [Mix&Go](https://mixandgo.com/) - [Mastering-ruby-blocks-in-less-than-5-minutes](https://mixandgo.com/blog/mastering-ruby-blocks-in-less-than-5-minutes)
+- [All About Ruby](http://allaboutruby.wordpress.com/) - [Ruby Blocks](http://allaboutruby.wordpress.com/2006/01/20/ruby-blocks-101/)
+- [Reactive's Tips](http://www.reactive.io/tips/) - [Understanding Ruby Blocks, Procs, and Lambdas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas)
+- [Mix&Go](https://mixandgo.com/) - [Mastering-ruby-blocks-in-less-than-5-minutes](https://mixandgo.com/learn/mastering-ruby-blocks-in-less-than-5-minutes)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/yield-and-blocks' title='Yield and Blocks'>Yield and Blocks</a> on Learn.co and start learning to code for free.</p>
